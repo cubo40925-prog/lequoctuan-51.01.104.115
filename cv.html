@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Lê Quốc Tuấn</title>
+    <link rel="stylesheet" href="cv.css">
+</head>
+
+<body>
+    <!-- Hiệu ứng nền hạt -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Phần đầu -->
+    <div class="header">
+        <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/558888191_1859992721540426_5546472946418350348_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=nkEWEuwzABQQ7kNvwEg8PUx&_nc_oc=Adn06k9lm2eQ97rOu3pO41lFuu6JdFPAEbnwNey2MuBEXgf1DCG2os3_gHxlPZDgHZk&_nc_zt=23&_nc_ht=scontent.fsgn5-5.fna&_nc_gid=AsaUsSO1k1ZOsPz8S16Fnw&oh=00_AfhzNmU6Whbn5p-IwFA8bR3gQEvbsE0SuCkH4SxHR3Y_HQ&oe=690E9F80" class="avatar" alt="Ảnh đại diện">
+        <h1>LÊ QUỐC TUẤN</h1>
+        <p class="subtitle">Sinh viên Công nghệ Thông tin | Trường Đại học Sư phạm TP.HCM</p>
+
+        <div class="buttons">
+            <button onclick="showSection('about')">Giới thiệu</button>
+            <button onclick="showSection('education')">Học vấn</button>
+            <button onclick="showSection('skills')">Kỹ năng</button>
+            <button onclick="showSection('projects')">Dự án</button>
+            <button onclick="showSection('contact')">Liên hệ</button>
+        </div>
+    </div>
+
+    <!-- Nội dung chính -->
+    <div class="content">
+
+        <section id="about" class="section">
+            <h2>Giới thiệu</h2>
+            <p>Mình là <strong>Lê Quốc Tuấn</strong>, sinh viên năm nhất ngành Công nghệ Thông tin tại Đại học Sư phạm TP.HCM. 
+            Mình có niềm đam mê mãnh liệt với lập trình, thiết kế web và mong muốn trở thành một lập trình viên chuyên nghiệp trong tương lai.</p>
+        </section>
+
+        <section id="education" class="section hidden">
+            <h2>Học vấn</h2>
+            <ul>
+                <li><strong>2024 - nay:</strong> Đại học Sư phạm TP.HCM – Chuyên ngành Công nghệ Thông tin</li>
+                <li><strong>2021 - 2024:</strong> Trường TH-THCS-THPT Thanh Bình – Học sinh khối tự nhiên</li>
+            </ul>
+        </section>
+
+        <section id="skills" class="section hidden">
+            <h2>Kỹ năng</h2>
+            <ul>
+                <li>💻 Lập trình: C++, Python, HTML, CSS, JavaScript</li>
+                <li>🧩 Thiết kế web cơ bản và tối ưu giao diện người dùng</li>
+                <li>📊 Kỹ năng làm việc nhóm, thuyết trình và sáng tạo giải pháp</li>
+                <li>🧠 Tư duy logic, học nhanh và thích khám phá công nghệ mới</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="section hidden">
+            <h2>Dự án tiêu biểu</h2>
+            <ul>
+                <li><strong>Trang Portfolio cá nhân:</strong> Dự án web đầu tay, sử dụng HTML, CSS và JavaScript để tạo trang cá nhân có hiệu ứng động.</li>
+                <li><strong>Ứng dụng Quản lý sinh viên:</strong> Viết bằng C++ giúp quản lý thông tin sinh viên, điểm số và xếp loại.</li>
+            </ul>
+        </section>
+
+        <section id="contact" class="section hidden">
+            <h2>Liên hệ</h2>
+            <p class="contact-item">
+                <p class="contact-item">
+                   <span class="mail-icon">
+                      <span class="envelope"></span>
+                </span>
+                <strong>Email:</strong> cubo40925@gmail.com
+              </p>
+            </p>
+            <p><strong>Facebook:</strong> <a href="https://www.facebook.com/quoc.tuan.310257" target="_blank">facebook.com/quoc.tuan.310257</a></p>
+            <p><strong>Instagram:</strong> <a href="https://www.instagram.com/kurayami2k7/" target="_blank">@kurayami2k7</a></p>
+        </section>
+
+
+    </div>
+
+    <script>
+        // Hiển thị phần được chọn
+        function showSection(id) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Tạo hiệu ứng hạt
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const count = 25;
+            for (let i = 0; i < count; i++) {
+                const p = document.createElement('div');
+                p.classList.add('particle');
+                p.style.width = p.style.height = Math.random() * 6 + 3 + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = (Math.random() * 10 + 10) + 's';
+                p.style.animationDelay = Math.random() * 5 + 's';
+                particlesContainer.appendChild(p);
+            }
+        }
+        window.onload = createParticles;
+    </script>
+</body>
+</html>
